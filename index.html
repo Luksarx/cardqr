@@ -1,136 +1,59 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Security Awareness Check</title>
-
-<style>
-    body {
-        margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: linear-gradient(135deg, #0c1f3f, #5e2b97);
-        color: white;
-        text-align: center;
-    }
-
-    .container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .card {
-        background: rgba(255,255,255,0.08);
-        padding: 40px;
-        border-radius: 12px;
-        backdrop-filter: blur(10px);
-        width: 420px;
-    }
-
-    .loader {
-        border: 5px solid rgba(255,255,255,0.2);
-        border-top: 5px solid #ffffff;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 1s linear infinite;
-        margin: 20px auto;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-
-    .progress-bar {
-        width: 100%;
-        background: rgba(255,255,255,0.2);
-        border-radius: 10px;
-        overflow: hidden;
-        margin-top: 20px;
-    }
-
-    .progress {
-        height: 10px;
-        width: 0%;
-        background: #00e5ff;
-        animation: loading 4s forwards;
-    }
-
-    @keyframes loading {
-        from { width: 0%; }
-        to { width: 100%; }
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .result {
-        animation: fadeIn 1.5s ease;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-</style>
+    <title>Security Awareness Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f3c88, #39a2db);
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .container {
+            background: rgba(0,0,0,0.4);
+            padding: 50px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 500px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .result {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+        .tip {
+            margin-top: 30px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>🔐 Security Awareness Test</h1>
 
-<div class="container">
-    <div class="card" id="loadingScreen">
-        <h2>🔐 Security Scan in Progress</h2>
-        <p>Analyzing QR interaction...</p>
+        <p class="result">
+            ✅ QR code successfully scanned<br><br>
+            ⚠️ You engaged with an unverified source
+        </p>
 
-        <div class="loader"></div>
+        <p>
+            This was an internal awareness test / harmless prank 😄
+        </p>
 
-        <div class="progress-bar">
-            <div class="progress"></div>
+        <p>
+            <b>Takeaway:</b><br>
+            Always verify links and QR codes before interacting.
+        </p>
+
+        <div class="tip">
+            No data was collected.<br>
+            Reward: coffee ☕
         </div>
-
-        <p style="margin-top:20px; font-size:14px;">Checking security awareness status...</p>
     </div>
-
-    <div class="card hidden" id="resultScreen">
-        <h2>⚠️ Security Awareness Result</h2>
-
-        <p style="font-size:18px;">
-            You engaged with an unknown QR source
-        </p>
-
-        <p>
-            ✔ This was a simulated awareness test / prank
-        </p>
-
-        <p>
-            <b>Conclusion:</b><br>
-            You got caught by curiosity 😄
-        </p>
-
-        <p style="margin-top:20px;">
-            Always verify links & QR codes before interacting.
-        </p>
-
-        <p style="margin-top:30px; font-size:13px; opacity:0.8;">
-            No data collected • Impact: Coffee ☕
-        </p>
-
-        <p style="margin-top:20px;">
-            PS. Please report this incident... to yourself 😉
-        </p>
-    </div>
-</div>
-
-<script>
-    setTimeout(() => {
-        document.getElementById("loadingScreen").classList.add("hidden");
-        document.getElementById("resultScreen").classList.remove("hidden");
-    }, 4500);
-</script>
-
 </body>
 </html>
